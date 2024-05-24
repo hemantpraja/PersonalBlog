@@ -3,12 +3,13 @@ import { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux'
 import authSerrvice from './appwrite/auth.js'
 import { login, logout } from './redux/authSlice.js'
-import { Header } from './components/index.js'
+import { Footer, Header } from './components/index.js'
 import { Outlet } from 'react-router-dom'
 
 function App() {
   const [loading, setloading] = useState(true)
   const dispatch = useDispatch()
+  console.log("url : ",import.meta.env.VITE_APPWRITE_URL);
 
   useEffect(() => {
     authSerrvice.getCurrentUser()
